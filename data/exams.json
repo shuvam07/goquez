@@ -1,0 +1,73 @@
+{
+  "exam" : 
+  [
+    {
+      "Engineering entrance exams":
+      [
+          {
+            "National":
+            [
+              "JEE Main", 
+              "JEE Advanced",
+              "BITSAT", 
+              "VITEEE", 
+              "APIIT NAT", 
+              "ATIT", 
+              "NATA", 
+              "LPU NEST"
+            ]
+          },
+          {
+            "PG":
+            [
+               "GATE",
+               "SRMGEET",
+               "AP PGCET",
+               "TS PGECET",
+               "VITMEE"
+            ]
+          },
+          {
+            "State":
+            [
+              "KCET (Karnataka Common Entrance Test)",
+              "MHT CET (Maharashtra’s Common Entrance Test)",
+              "TNEA (Tamil Nadu Engineering Admissions)",
+              "COMEDK (Consortium of Medical, Engineering and Dental Colleges of Karnataka)",
+              "UPSEE (Uttar Pradesh State Entrance Exam)",
+              "AP EAMCET (Engineering, Agriculture and Medicine Common Entrance Test)",
+              "Karnataka PGCET (Karnataka Post Graduate Common Entrance Test)",
+              "KEAM (Kerala Engineering Architecture Medical Examination)",
+              "CENTAC Exam",
+              "TS PGECET (Telangana State Postgraduate Engineering Common Entrance Test)",
+              "AP PGECET (Andhra Pradesh Postgraduate Engineering Common Entrance Test)",
+              "BCECE (Bihar Combined Entrance Competitive Examination)",
+              "Orissa JEE (Orissa Joint Entrance Examination)",
+              "WBJEE (West Bengal Joint Entrance Examinations Board)",
+              "IPU CET (Guru Gobind Singh Indraprastha University Common Entrance Test)"
+            ]
+          },
+          "University"
+      ]
+    },
+    "Medical Entrance Exam",
+    "Law Entrance Exam", 
+    "MBA Entrance Exam", 
+    "Pharmacy Entrance Exam",
+    "Hotel Management Entrance Exam",
+    "University Level Entrance Exam",
+    "Mass Communication Entrance Exams",
+    "BBA Entrance Exam",
+    "B.Ed. Entrance Exams",
+    "Agricultural Entrance Exam",
+    "Nursing Entrance Exam",
+    "Fashion & Design Entrance Exam",
+    "Marine Engineering Entrance Exam",
+    "Science Entrance Exam",
+    "BFA Entrance Exam",
+    "BCA Entrance Exam",
+    "Polytechnic entrance exam",
+    "MCA Entrance Exam",
+    "JRF Entrance Exam"
+  ]
+}

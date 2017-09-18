@@ -1,0 +1,16 @@
+.sidebar-nav {
+    width: 18%;
+    height: 90vh;
+}
+
+.my-list-wrapper {
+	width: 100vw;
+}
+
+html, body{
+    height: 100%;
+}
+
+.list-group-item{
+	width: 250px;
+}
