@@ -2,44 +2,48 @@ const express = require('express')
 const app = express()
 const hbs = require('handlebars');
 const fs = require('fs');
+const rhls = require('./src/main/util/registerAllHelpers');
 
 
-hbs.registerHelper('printTree', function(context, options) {
-	var _printTree = function(context) {
-		if( typeof context  === 'string') {
-			return "<li class=\"my-list-item\">"+ context + "</li>";
-		}
+// Register all handlebars helpers
+rhls();
 
-		if (Array.isArray(context)) { 
-			var list = "";
-			for(var i=0; i < context.length; i++){
-				list += "<ul class=\"my-list-group\">"+ _printTree(context[i]) + "</ul>";
-			}
-			return list;
-		}
-		else {
-			for(var key in context) {
-				return "<li class=\"my-list-item\">"+ key + _printTree(context[key]) + "</li>";
-			}
-		}  
-	}
-
-	return _printTree(context);
-});
-
+// Serve static files
+app.use('/static', express.static(__dirname+'/static'));
 
 app.get('/', function(req, res){
 	let indexTemplate = fs.readFileSync('src/templates/index.html',"utf8");
 	let compiledTemplate = hbs.compile(indexTemplate);
 	let data = fs.readFileSync('data/exams.json',"utf8");
 	let result = compiledTemplate(JSON.parse(data));
-	console.log(data);
 	res.send(result);
 })
 
-app.use(express.static(__dirname+'/src'));
+app.get('/getPaper', function(req, res){
+
+	console.log(req.query);
+	let id = req.query.pid;
+	var paper = fetchPaper(id);
+	fs.readFile('http://172.26.90.154:8081/data/engg/national/JEE%20MAIN/2013_R.pdf', function (err,data){
+        res.send("<iframe src='" + paper + "' style='width:100%;height:80vh' ></iframe>");
+    });
+})
 
 app.listen(3000, function(){
 	console.log('listening on port 3000 ..');
 })
+
+function fetchPaper(id){
+	switch(id){
+		case "1":{return "http://172.26.90.154:8081/data/engg/national/JEE MAIN/2013_R.pdf"}
+		case "2":{return "http://172.26.90.154:8081/data/engg/national/JEE MAIN/2013_R.pdf"}
+		case "3":{return "http://172.26.90.154:8081/data/engg/national/JEE MAIN/2013_R.pdf"}
+		case "4":{return "http://172.26.90.154:8081/data/engg/national/JEE MAIN/2013_R.pdf"}
+		case "5":{return "http://172.26.90.154:8081/data/engg/national/JEE MAIN/2013_R.pdf"}
+		case "6":{return "http://172.26.90.154:8081/data/engg/national/JEE MAIN/2013_R.pdf"}
+		case "7":{return "http://172.26.90.154:8081/data/engg/national/JEE MAIN/2013_R.pdf"}
+		case "8":{return "http://172.26.90.154:8081/data/engg/national/JEE MAIN/2013_R.pdf"}
+		case "9":{return "http://172.26.90.154:8081/data/engg/national/JEE MAIN/2013_R.pdf"}
+	}
+}
 
