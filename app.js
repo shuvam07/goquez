@@ -29,6 +29,15 @@ app.get('/getPaper', function(req, res){
     });
 })
 
+
+app.get('/chat', function(req, res){
+	fs.readFile('static/chat.html', function(err, data) {
+    	res.writeHead(200, {'Content-Type': 'text/html'});
+    	res.write(data);
+    	return res.end();
+  	}); 
+})
+
 app.listen(3000, function(){
 	console.log('listening on port 3000 ..');
 })
